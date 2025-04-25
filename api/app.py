@@ -14,8 +14,8 @@ KEYCLOAK_ALLOWED_ROLE = os.getenv("KEYCLOAK_ALLOWED_ROLE")
 
 keyclock_credentials = KeycloakOpenID(
     server_url=KEYCLOAK_SERVER_URL,
-    realm_name=os.getenv("KEYCLOAK_REALM"),
-    client_id=os.getenv("KEYCLOAK_CLIENT_ID")
+    realm_name=KEYCLOAK_REALM,
+    client_id=KEYCLOAK_CLIENT_ID
 )
 
 def verify(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
